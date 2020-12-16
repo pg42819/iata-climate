@@ -1,0 +1,25 @@
+<configuration>
+
+<!--	<property name="LOG_PATH" value="autoclimate.log" />-->
+
+	<!-- the ClimateActionAppender is used for the actual log file for the action handler -->
+<!--	<appender name="ClimateActionAppender" class="ch.qos.logback.core.FileAppender">-->
+<!--		<file>${LOG_PATH}</file>-->
+<!--		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">-->
+<!--			<pattern>%d{HH:mm:ss.SSS} %msg%n</pattern>-->
+<!--		</encoder>-->
+<!--	</appender>-->
+
+	<logger name="ClimateActionHandler" level="INFO"/>
+
+	<!-- the default appender sends to stdout for now (change this for a proper log) -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
